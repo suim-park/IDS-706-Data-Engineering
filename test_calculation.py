@@ -6,4 +6,4 @@ def calculation(a, b):
 
 
 def test_calculation(a, b):
-    assert doubler(13, 25) == 38
+    assert calculation(13, 25) == 38
