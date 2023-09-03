@@ -1,8 +1,8 @@
 # .github/
 #      workflows/
 #              main.yml
-name: Python CI                      # workflow name
-on: [push, pull_request]             # event trigger on push
+name: Python CI
+on: push
 
 jobs:
   build:
