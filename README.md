@@ -18,3 +18,5 @@ Things included are:
 * `requirements.txt` 
 
 * `githubactions` 
+
+* `calculation.py` and `test_calculation.py`
