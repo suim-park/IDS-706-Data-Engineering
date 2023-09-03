@@ -1,7 +1,7 @@
 # .github/
 #      workflows/
 #              main.yml
-name: my first workflow              # workflow name
+name: Python CI                      # workflow name
 on: push                             # event trigger on push
 
 jobs:
