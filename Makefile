@@ -1,12 +1,12 @@
 install:
-        pip install --upgrade pip &&\
-                pip install -r requirements.txt
+	pip install --upgrade pip &&\
+        	pip install -r requirements.txt
 
 test:
-        python -m pytest -vv calculation.py
+	python -m pytest -vv calculation.py
 
 format:
-        black *.py
+	black *.py
 
 lint:
 	#disable comment to test speed
@@ -17,9 +17,11 @@ lint:
 container-lint:
 	docker run --rm -i hadolint/hadolint < Dockerfile
 
-refactor: format lint
+refactor:
+	format lint
 
 deploy:
 	#deploy goes here
 		
-all: install lint test format deploy
+all:
+	install lint test format deploy
