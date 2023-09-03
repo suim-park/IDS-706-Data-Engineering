@@ -2,14 +2,19 @@
 #      workflows/
 #              main.yml
 name: Python CI                      # workflow name
-on: push                             # event trigger on push
+on: [push, pull_request]             # event trigger on push
 
 jobs:
-  build:                             # job id
-    name: Hello world action         # job name
-    runs-on: ubuntu-latest           # virtual environment
+  build:
+    runs-on: ubuntu-latest
+
     steps:
-    - name: checkout source code     # step 01 name
-      uses: actions/checkout@master  # source code checkout
-    - name: say hello                # step 02 name
-      run: echo "hello world"        # run linux command
+      - uses: actions/checkout@v1
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          profile: minimal
+          components: clippy, rustfmt
+          override: true
+      - name: Run clippy
+        run: make test
