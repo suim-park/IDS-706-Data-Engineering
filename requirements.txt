@@ -1,0 +1,16 @@
+# See that file for comments about the need/usage of each dependency.
+
+python
+numpy
+pandas
+
+# Devops
+black
+click
+pytest
+pytest-cov
+
+#pylint
+#rust based linter
+ruff
+boto3
